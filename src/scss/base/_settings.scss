@@ -3,41 +3,41 @@
 // @use "../utilities/functions" as *;
 
 // Colors
-// $dark: #1c1c1c;
-// $light: #fcfcfc;
-// $yellow: #f7df1c;
-// $grey: #e1e1e1;
-// $red: #d75b5b;
+$backgroundColor: #171141;
+$navBackground: #211a5b;
+$buttonColor: #8e8eed;
+$fontWhite: #e5e4f2;
 
 // Fonts
-// $bodyFont: 'Roboto', sans-serif;
-// $headingFont: 'Alatsi', sans-serif;
+$font: "Work Sans", sans-serif;
 
 // Layout
 // $section-padding: em(16) em(20);
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 // Type
 
-// body {
-//   font-family: $bodyFont;
-//   color: $dark;
-// }
+body {
+  font-family: $font;
+  color: $fontWhite;
+  background-color: $backgroundColor;
+}
 
-// h1,
-// h2,
-// h3,
-// h4 {
-//   font-family: $headingFont;
-// }
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font;
+}
 
-// h1,
-// h2,
-// h3,
-// h4,
-// p {
-//   margin-top: 0;
-// }
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
 
-// p {
-//   line-height: 1.4;
-// }
+p {
+  line-height: 1.4;
+}
