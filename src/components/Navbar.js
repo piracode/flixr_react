@@ -1,7 +1,6 @@
 //navlinks?
 //search?
 import React, { useState } from "react";
-import "./navbar.css";
 
 const Navbar = () => {
   // to change burger classes
