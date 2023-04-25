@@ -2,6 +2,7 @@
 @use "./base/reset";
 
 // Components
+@use "./components/navbar";
 @use "./components/movies";
 @use "./components/movieDetail";
 @use "./components/buttons";

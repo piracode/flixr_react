@@ -1,9 +1,13 @@
-//navbar will be here
 //logo
-import NavBar from "./NavBar";
+
+import Navbar from "./Navbar";
 
 const Header = () => {
-    return (  );
-}
- 
+  return (
+    <>
+      <Navbar />
+    </>
+  );
+};
+
 export default Header;
