@@ -2,6 +2,10 @@ import "./scss/styles.scss";
 import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 
 import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Buttons from "./components/Buttons";
+import Movies from "./components/Movies";
+import Footer from "./components/Footer";
 
 //pages
 import About from "./pages/About";
@@ -10,13 +14,6 @@ import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
 
 function App() {
-  // return (
-  //   <>
-  //     <Header />
-  // <Footer
-  //   </>
-  // );
-
   return (
     <>
       <BrowserRouter>
@@ -37,6 +34,10 @@ function App() {
         </main>
       </BrowserRouter>
       <Header />
+      <Hero />
+      <Buttons />
+      <Movies />
+      <Footer />
     </>
   );
 }
