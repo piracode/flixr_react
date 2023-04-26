@@ -6,11 +6,8 @@ import Hero from "./components/Hero";
 import Buttons from "./components/Buttons";
 import Movies from "./components/Movies";
 import Footer from "./components/Footer";
-<<<<<<< HEAD
-import HeroContent from "./components/HeroContent";
-=======
+// import HeroContent from "./components/HeroContent";
 import Navbar from "./components/Navbar";
->>>>>>> origin/master
 
 //pages
 import About from "./pages/About";
@@ -48,9 +45,8 @@ function App() {
           </Routes>
         </main>
       </BrowserRouter>
-      <Header />
-      {/* <Hero /> */}
-      <HeroContent />
+
+      <Hero />
       <Buttons />
       <Movies />
       <Footer />
