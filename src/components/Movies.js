@@ -1,5 +1,7 @@
+import APICall from '../utilities/api';
+
 const Movies = () => {
-  return "hello movies";
+	return <APICall category={'popular'} />;
 };
 
 export default Movies;
