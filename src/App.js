@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Buttons from "./components/Buttons";
 import Movies from "./components/Movies";
 import Footer from "./components/Footer";
+// import HeroContent from "./components/HeroContent";
 import Navbar from "./components/Navbar";
 
 //pages
@@ -44,7 +45,7 @@ function App() {
           </Routes>
         </main>
       </BrowserRouter>
-      <Header />
+
       <Hero />
       <Buttons />
       <Movies />
