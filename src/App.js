@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Buttons from "./components/Buttons";
 import Movies from "./components/Movies";
 import Footer from "./components/Footer";
+import HeroContent from "./components/HeroContent";
 
 //pages
 import About from "./pages/About";
@@ -34,7 +35,8 @@ function App() {
         </main>
       </BrowserRouter>
       <Header />
-      <Hero />
+      {/* <Hero /> */}
+      <HeroContent />
       <Buttons />
       <Movies />
       <Footer />
