@@ -1,5 +1,6 @@
-import "./scss/styles.scss";
-import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
+import './scss/styles.scss';
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -10,12 +11,13 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 //pages
-import About from "./pages/About";
-import Favourites from "./pages/Favourites";
-import Home from "./pages/Home";
-import MovieDetails from "./pages/MovieDetails";
+import About from './pages/About';
+import Favourites from './pages/Favourites';
+import Home from './pages/Home';
+import MovieDetails from './pages/MovieDetails';
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -52,6 +54,7 @@ function App() {
       <Footer />
     </>
   );
+
 }
 
 export default App;
