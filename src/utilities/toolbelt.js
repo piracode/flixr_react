@@ -1,12 +1,27 @@
-function movieTitleFormatter(title) {
-  // split the string into an array of words
-  const words = str.split(" ");
-  // iterate over each word and capitalize the first letter
-  for (let i = 0; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-  }
-  // join the words back together into a string and return it
-  return words.join(" ");
-}
+import { useState } from 'react';
 
-export { movieTitleFormatter };
+/////////////////// BIA TESTING FETCH ///////////////////
+export default function useFetch(baseUrl) {
+	const [loading, setLoading] = useState(true);
+
+	function get(url) {
+		return new Promise((resolve, reject) => {
+			fetch(baseUrl + url)
+				.then(response => response.json())
+				.then(data => {
+					if (!data) {
+						setLoading(false);
+						return reject(data);
+					}
+					setLoading(false);
+					resolve(data);
+				})
+				.catch(error => {
+					setLoading(false);
+					reject(error);
+				});
+		});
+	}
+
+	return { get, loading };
+}

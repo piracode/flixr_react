@@ -1,0 +1,81 @@
+@use '../base/settings' as *;
+
+button {
+	&.category-buttons {
+		background-color: $navBackground;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		border: none;
+		font-family: $font;
+		color: transparent;
+		background-size: 40px;
+		background-repeat: no-repeat;
+		background-position: center;
+		&:active {
+			background-color: $buttonColor;
+		}
+	}
+	&#popular {
+		background-image: url(./../../../public/assets/popular.svg);
+	}
+
+	&#upcoming {
+		background-image: url(./../../../public/assets/upcoming.svg);
+	}
+
+	&#top-rated {
+		background-image: url(./../../../public/assets/top-rated.svg);
+	}
+
+	&#now-playing {
+		background-image: url(./../../../public/assets/now-playing.svg);
+	}
+}
+
+.button-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.3rem;
+	font-size: 0.8rem;
+}
+
+.category-buttons-section ul {
+	display: flex;
+	gap: 0.7rem;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+
+	li {
+		list-style-type: none;
+	}
+}
+
+@media (min-width: 900px) {
+	.button-container {
+		gap: 1rem;
+		font-size: 1rem;
+	}
+	button {
+		&.category-buttons {
+			width: 130px;
+			height: 35px;
+			border-radius: 20px;
+			color: $fontWhite;
+			background-size: 20px;
+			background-position: 15px;
+			text-align: center;
+			padding-left: 30px;
+			&:active {
+				background-color: $buttonColor;
+			}
+		}
+	}
+
+	.button-label {
+		display: none;
+	}
+}
