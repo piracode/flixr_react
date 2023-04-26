@@ -2,7 +2,8 @@
 //search?
 import React, { useState } from "react";
 
-const Navbar = () => {
+//Modified navigation from https://github.com/moses-netshitangan...
+const Navbar = ({ homeLink, otherLinks }) => {
   // to change burger classes
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hidden");
@@ -21,19 +22,17 @@ const Navbar = () => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
-      <nav>
+    // <div style={{ width: "100%", height: "100vh" }}>
+    <div>
+      <nav className="nav">
+        <h1>{homeLink}</h1>
         <div
           className="burger-menu"
           onClick={updateMenu}
           aria-label="Toggle Navigation Menu"
-          //the aria-label attribute describes the purpose of the burger menu to screen readers.
-          tabIndex="0"
-          // tabIndex allows the burger menu to be docusable using the keyboard
           aria-expanded={isMenuClicked}
-          //the aria expended attribute will indicate to screen readers if the menu is currently expanded or not.
+          tabIndex="0"
           aria-haspopup="true"
-          // This attribute will indicate to screen readers that the menu has a sub-menu and that interacting with it will reveal extra content
         >
           <div className={burger_class}></div>
           <div className={burger_class}></div>
@@ -41,8 +40,17 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className={menu_class} role="navigation">
-        {/* Thie role attribute will identify the menu as a navigation landmark to screen readers. */}
+      <div
+        className={menu_class}
+        role="navigation"
+        aria-expanded={isMenuClicked}
+      >
+        <p className="test"> nav links</p>
+        <ul>
+          {otherLinks?.map((link, index) => (
+            <li key={index}>{link}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

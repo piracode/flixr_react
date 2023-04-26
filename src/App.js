@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Buttons from "./components/Buttons";
 import Movies from "./components/Movies";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 //pages
 import About from "./pages/About";
@@ -18,11 +19,21 @@ function App() {
     <>
       <BrowserRouter>
         <header>
-          <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="about">About</NavLink>
-            <NavLink to="favourites">Favourites</NavLink>
-          </nav>
+          <Navbar
+            homeLink={
+              <NavLink className="nav-logo" to="/">
+                flixr
+              </NavLink>
+            }
+            otherLinks={[
+              <NavLink className="nav-links" to="/about">
+                about
+              </NavLink>,
+              <NavLink className="nav-links" to="/favourites">
+                favourites
+              </NavLink>,
+            ]}
+          />
         </header>
         <main>
           <Routes>
