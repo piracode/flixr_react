@@ -1,6 +1,7 @@
 //navlinks?
 //search?
 import React, { useState } from "react";
+import Buttons from "./Buttons";
 
 //Modified navigation from https://github.com/moses-netshitangan...
 const Navbar = ({ homeLink, otherLinks }) => {
@@ -23,7 +24,7 @@ const Navbar = ({ homeLink, otherLinks }) => {
 
   return (
     // <div style={{ width: "100%", height: "100vh" }}>
-    <div>
+    <>
       <nav className="nav">
         <h1>{homeLink}</h1>
         <div
@@ -41,18 +42,20 @@ const Navbar = ({ homeLink, otherLinks }) => {
       </nav>
 
       <div
-        className={menu_class}
+        className={`${menu_class} navButton`}
         role="navigation"
         aria-expanded={isMenuClicked}
       >
-        <p className="test"> nav links</p>
-        <ul>
+        <ul className="nav-container">
           {otherLinks?.map((link, index) => (
-            <li key={index}>{link}</li>
+            <li className="nav-list" key={index}>
+              {link}
+            </li>
           ))}
         </ul>
+        <Buttons />
       </div>
-    </div>
+    </>
   );
 };
 
