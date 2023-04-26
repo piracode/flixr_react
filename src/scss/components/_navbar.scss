@@ -11,16 +11,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+
   &-logo {
     font-size: 4rem;
     font-weight: 800;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    gap: 2rem;
+    padding-top: 10rem;
   }
 
   .burger-menu {
     height: 2.9rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    // align-items: flex-start;
     justify-content: space-between;
     cursor: pointer;
 
@@ -68,13 +78,13 @@
     display: inherit;
   }
 }
-.test {
-  z-index: 9999;
-  color: red;
-}
 
 .nav h1,
 .burger-menu {
-  position: relative; // add this to create a stacking context for the elements
+  position: relative; // create a stacking context for the elements
   z-index: 2; // higher z-index value than the menu
+}
+
+.navButton button.nav-button {
+  background-color: #3d318f;
 }

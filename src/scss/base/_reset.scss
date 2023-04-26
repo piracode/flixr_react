@@ -6,10 +6,9 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-body {
+  //added this to fix issues with cetnering my h1
   margin: 0;
+  padding: 0;
 }
 
 img {
