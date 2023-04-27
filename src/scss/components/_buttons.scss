@@ -24,11 +24,11 @@ button {
 		background-image: url(./../../../public/assets/upcoming.svg);
 	}
 
-	&#top-rated {
+	&#top_rated {
 		background-image: url(./../../../public/assets/top-rated.svg);
 	}
 
-	&#now-playing {
+	&#now_playing {
 		background-image: url(./../../../public/assets/now-playing.svg);
 	}
 }
@@ -45,7 +45,7 @@ button {
 .category-buttons-section ul {
 	display: flex;
 	gap: 0.7rem;
-	margin: 0;
+	margin: 1rem 0;
 	padding: 0;
 	justify-content: center;
 
@@ -54,7 +54,12 @@ button {
 	}
 }
 
-@media (min-width: 900px) {
+button.active {
+	background-color: $buttonColor;
+}
+
+/////////////////// change breakpoint! ///////////////////
+@media (min-width: 700px) {
 	.button-container {
 		gap: 1rem;
 		font-size: 1rem;
