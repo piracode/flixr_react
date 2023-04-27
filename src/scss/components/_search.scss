@@ -1,0 +1,20 @@
+@use "../base/settings" as *;
+
+.search {
+  margin-top: 4rem;
+  display: flex;
+  //   align-items: center;
+  justify-content: center;
+  &__input {
+    background-image: url(./../../../public/assets/search.svg);
+    background-repeat: no-repeat;
+    background-color: $backgroundColor;
+    background-position: calc(100% - 24px - (-8px)) center;
+    background-size: 30px;
+    padding: 1rem;
+    // border: none;
+    border: 1.5px solid $fontWhite;
+    border-radius: 2rem;
+    width: 18rem;
+  }
+}
