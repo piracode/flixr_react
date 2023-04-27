@@ -1,7 +1,7 @@
-//navlinks?
 //search?
 import React, { useState } from "react";
 import Buttons from "./Buttons";
+import Search from "./Search";
 
 //Modified navigation from https://github.com/moses-netshitangan...
 const Navbar = ({ homeLink, otherLinks }) => {
@@ -23,7 +23,6 @@ const Navbar = ({ homeLink, otherLinks }) => {
   };
 
   return (
-    // <div style={{ width: "100%", height: "100vh" }}>
     <>
       <nav className="nav">
         <h1>{homeLink}</h1>
@@ -52,8 +51,9 @@ const Navbar = ({ homeLink, otherLinks }) => {
               {link}
             </li>
           ))}
+          <Buttons buttons_container_class="nav-buttons-section category-buttons-section" />
         </ul>
-        <Buttons />
+        <Search />
       </div>
     </>
   );
