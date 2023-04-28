@@ -1,3 +1,6 @@
+
+
+
 import Buttons from './../components/Buttons';
 import Movies from './../components/Movies';
 import { useState } from 'react';
@@ -23,5 +26,6 @@ const Home = () => {
 		</>
 	);
 };
+
 
 export default Home;
