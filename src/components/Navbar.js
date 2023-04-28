@@ -1,5 +1,4 @@
-//search?
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Buttons from "./Buttons";
 import Search from "./Search";
 
@@ -26,6 +25,21 @@ const Navbar = ({ homeLink, otherLinks }) => {
     <>
       <nav className="nav">
         <h1>{homeLink}</h1>
+
+        {/* Destop Nav */}
+        <div className={`nav-desktop`}>
+          <ul className="nav-desktop-container">
+            {otherLinks?.map((link, index) => (
+              <li className="nav-list" key={index}>
+                {link}
+              </li>
+            ))}
+          </ul>
+          <Search />
+        </div>
+        {/* Desktop Nav END */}
+
+        {/* Mobile Nav */}
         <div
           className="burger-menu"
           onClick={updateMenu}
@@ -38,8 +52,10 @@ const Navbar = ({ homeLink, otherLinks }) => {
           <div className={burger_class}></div>
           <div className={burger_class}></div>
         </div>
+        {/* Mobile Nav END */}
       </nav>
 
+      {/* Mobile Nav */}
       <div
         className={`${menu_class} navButton`}
         role="navigation"
