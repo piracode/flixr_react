@@ -52,6 +52,7 @@
   @media screen and (min-width: 45em) {
     .hero-image-container {
       height: 70vh;
+      margin-bottom: 1rem;
     }
     .hero-image {
       width: 100%;
@@ -59,7 +60,7 @@
       object-fit: cover;
     }
     .slider-buttons {
-      bottom: 20px;
+      // bottom: 20px;
     }
 
     .slider-button {
