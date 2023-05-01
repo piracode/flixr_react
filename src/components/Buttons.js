@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from './Button'
 
 const Buttons = ({
   onButtonClick,
@@ -7,26 +7,26 @@ const Buttons = ({
 }) => {
   const categories = [
     {
-      id: "popular",
-      categoryName: "Popular",
+      id: 'popular',
+      categoryName: 'Popular',
     },
     {
-      id: "top_rated",
-      categoryName: "Top Rated",
+      id: 'top_rated',
+      categoryName: 'Top Rated',
     },
     {
-      id: "now_playing",
-      categoryName: "Now Playing",
+      id: 'now_playing',
+      categoryName: 'Now Playing',
     },
     {
-      id: "upcoming",
-      categoryName: "Upcoming",
+      id: 'upcoming',
+      categoryName: 'Upcoming',
     },
-  ];
+  ]
 
   return (
     <section className={buttons_container_class}>
-      <ul className="buttons-container ">
+      <ul className='buttons-container '>
         {categories.map((category) => (
           <li key={category.id}>
             <Button
@@ -35,15 +35,15 @@ const Buttons = ({
               onButtonClick={onButtonClick}
               className={
                 chosenCategory === category.id
-                  ? "active category-buttons nav-button"
-                  : "category-buttons nav-button"
+                  ? 'active category-buttons nav-button'
+                  : 'category-buttons nav-button'
               }
             />
           </li>
         ))}
       </ul>
     </section>
-  );
-};
+  )
+}
 
-export default Buttons;
+export default Buttons

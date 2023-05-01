@@ -1,5 +1,5 @@
 // _hero.scss
-@use "../base/settings" as *;
+@use '../base/settings' as *;
 
 .hero {
   position: relative;
@@ -70,4 +70,8 @@
       margin: 0 15px;
     }
   }
+}
+
+.slick-dots li button:before {
+  display: none;
 }
