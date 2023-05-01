@@ -1,78 +1,107 @@
-import React, { useState, useEffect } from "react";
-import Buttons from "./Buttons";
-import Search from "./Search";
+import React, { useState, useEffect } from 'react'
+import Buttons from './Buttons'
+import Search from './Search'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-//Modified navigation from https://github.com/moses-netshitangan...
-const Navbar = ({ homeLink, otherLinks }) => {
+const Navbar = ({
+  homeLink,
+  otherLinks,
+  onCategoryButtonClick,
+  chosenCategory,
+}) => {
+  // debugger
+  // const location = useLocation()
+  const navigate = useNavigate()
   // to change burger classes
-  const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
-  const [menu_class, setMenuClass] = useState("menu hidden");
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [burger_class, setBurgerClass] = useState('burger-bar unclicked')
+  const [menu_class, setMenuClass] = useState('menu hidden')
+  const [isMenuClicked, setIsMenuClicked] = useState(false)
+  // const [chosenCategory, setChosenCategory] = useState('popular')
+
+  const closeMenu = () => {
+    setBurgerClass('burger-bar unclicked')
+    setMenuClass('menu hidden')
+    setIsMenuClicked(false)
+  }
 
   // toggle burger menu change
   const updateMenu = () => {
     if (!isMenuClicked) {
-      setBurgerClass("burger-bar clicked");
-      setMenuClass("menu visible");
+      setBurgerClass('burger-bar clicked')
+      setMenuClass('menu visible')
     } else {
-      setBurgerClass("burger-bar unclicked");
-      setMenuClass("menu hidden");
+      closeMenu()
     }
-    setIsMenuClicked(!isMenuClicked);
-  };
+    setIsMenuClicked(!isMenuClicked)
+  }
+
+  //close navigation on search submit
+  const handleSearchSubmit = (searchValue) => {
+    closeMenu()
+    // navigate to the search results page
+    navigate(`/searchResults?query=${searchValue}`)
+  }
+
+  const handleButtonClick = (event) => {
+    // do various things, close the menu, etc.
+    onCategoryButtonClick(event)
+    closeMenu()
+    navigate(`/`)
+  }
 
   return (
     <>
-      <nav className="nav">
+      <nav className='nav'>
         <h1>{homeLink}</h1>
 
         {/* Destop Nav */}
         <div className={`nav-desktop`}>
-          <ul className="nav-desktop-container">
+          <ul className='nav-desktop-container'>
             {otherLinks?.map((link, index) => (
-              <li className="nav-list" key={index}>
+              <li className='nav-list' key={index}>
                 {link}
               </li>
             ))}
           </ul>
-          <Search />
+          <Search onSearchSubmit={handleSearchSubmit} />
         </div>
-        {/* Desktop Nav END */}
 
         {/* Mobile Nav */}
         <div
-          className="burger-menu"
+          className='burger-menu'
           onClick={updateMenu}
-          aria-label="Toggle Navigation Menu"
+          aria-label='Toggle Navigation Menu'
           aria-expanded={isMenuClicked}
-          tabIndex="0"
-          aria-haspopup="true"
+          tabIndex='0'
+          aria-haspopup='true'
         >
           <div className={burger_class}></div>
           <div className={burger_class}></div>
           <div className={burger_class}></div>
         </div>
-        {/* Mobile Nav END */}
       </nav>
 
-      {/* Mobile Nav */}
       <div
         className={`${menu_class} navButton`}
-        role="navigation"
+        role='navigation'
         aria-expanded={isMenuClicked}
       >
-        <ul className="nav-container">
+        <ul className='nav-container'>
           {otherLinks?.map((link, index) => (
-            <li className="nav-list" key={index}>
+            <li className='nav-list' key={index}>
               {link}
             </li>
           ))}
-          <Buttons buttons_container_class="nav-buttons-section category-buttons-section" />
+          <Buttons
+            onButtonClick={handleButtonClick}
+            chosenCategory={chosenCategory}
+            buttons_container_class='nav-buttons-section category-buttons-section'
+          />
         </ul>
-        <Search />
+        <Search onSearchSubmit={handleSearchSubmit} />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
