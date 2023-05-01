@@ -4,38 +4,51 @@
   display: flex;
   justify-content: center;
 
-  &__form {
-    position: relative;
-  }
+  // when typing we see the the button submit is a different part. Fix that. overflow hidden isnt working
   &__input {
-    // position: relative;
-    // background-image: url(./../../../public/assets/search.svg);
-    // background-repeat: no-repeat;
-    // background-color: $backgroundColor;
-
+    background-color: $backgroundColor;
     background-size: 30px;
     padding: 0.8rem;
     border: 1.5px solid $fontWhite;
     border-radius: 2rem;
     width: 18rem;
+    // z-index: 1;
+    // overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 
   &__svg {
     position: absolute;
-    background-image: url(./../../public/assets/search.svg);
+    background-image: url(./../../assets/search.svg);
     background-repeat: no-repeat;
     background-color: $backgroundColor;
-    // background-position: calc(100% - 24px - (-8px)) center;
+    border: none;
+    border-top: 1.5px solid $fontWhite;
+    border-bottom: 1.5px solid $fontWhite;
+    background-size: 35px;
+    background-position: right;
     top: 0;
     right: 0;
     bottom: 0;
     width: 50px;
     height: 50px;
     cursor: pointer;
+    // overflow: hidden;
+    margin-right: 24px;
   }
 
   &__input[type="text"] {
     color: $fontWhite;
     font-size: 1.2rem;
+  }
+
+  &__query-title {
+    padding: 2rem 0 2rem 0;
+    text-align: center;
   }
 }
