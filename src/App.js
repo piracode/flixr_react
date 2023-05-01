@@ -10,7 +10,7 @@ import About from './pages/About'
 import Favourites from './pages/Favourites'
 import Home from './pages/Home'
 import MovieDetails from './pages/MovieDetails'
-import SearchResults from './pages/SearchResults'
+import SearchResults from './pages/cheese'
 import { useState } from 'react'
 
 function App() {
