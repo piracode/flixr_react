@@ -1,16 +1,11 @@
 import { useState, useEffect } from "react";
 import useFetch from "./../utilities/toolbelt";
 import { API_KEY } from "./../utilities/api";
-import Movie from "./Movie";
+import Movie from "../components/Movie";
 
 const Movies = ({ chosenCategory }) => {
   const { get } = useFetch("https://api.themoviedb.org/3/movie/");
   const [movies, setMovies] = useState([]);
-  const [favorites, setFavorites] = useState([]);
-
-  const handleAddToFavorites = (movie) => {
-    setFavorites((prevFavorites) => [...prevFavorites, movie]);
-  };
 
   useEffect(() => {
     get(`${chosenCategory}?api_key=${API_KEY}&language=en-US&page=1`)
@@ -18,7 +13,7 @@ const Movies = ({ chosenCategory }) => {
         setMovies(data.results);
         console.log(data.results);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error)); /////// what do i do with this error? should i display it? ////////
   }, [chosenCategory]);
 
   if (movies) {
@@ -26,13 +21,14 @@ const Movies = ({ chosenCategory }) => {
       <section className="movies-container">
         {movies.map((movie) => {
           return (
-            <Movie
-              id={movie.id}
-              key={movie.id}
-              poster_path={movie.poster_path}
-              title={movie.title}
-              onAddToFavorites={() => handleAddToFavorites(movie)}
-            />
+            <>
+              <Movie
+                key={movie.id}
+                poster_path={movie.poster_path}
+                title={movie.title}
+                id={movie.id}
+              />
+            </>
           );
         })}
       </section>
