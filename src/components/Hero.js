@@ -18,7 +18,7 @@ const Hero = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  const posterPaths = movies.map((movie) => movie.poster_path);
+  const posterPaths = movies.map((movie) => movie.backdrop_path);
 
   const sliderSettings = {
     dots: true,
@@ -29,6 +29,7 @@ const Hero = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setActiveSlide(next),
+    initialSlide: activeSlide,
   };
 
   return (
