@@ -1,5 +1,5 @@
 // _hero.scss
-@use '../base/settings' as *;
+@use "../base/settings" as *;
 
 .hero {
   position: relative;
@@ -9,11 +9,44 @@
     height: 70vh;
     overflow: hidden;
   }
+  .hero-info {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    padding: 2rem;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    border-style: none;
+    z-index: 20;
+  }
+
+  .movie-title {
+    font-size: 2rem;
+  }
+
+  .movie-description {
+    margin: 0.5rem;
+    line-height: 1.5rem;
+  }
 
   .hero-image {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 10;
+  }
+
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 300;
   }
 
   .slider-buttons {
@@ -58,9 +91,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-    .slider-buttons {
-      // bottom: 20px;
     }
 
     .slider-button {

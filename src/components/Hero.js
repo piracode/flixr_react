@@ -13,12 +13,10 @@ const Hero = () => {
   useEffect(() => {
     get(`popular?api_key=${API_KEY}&language=en-US&page=1`)
       .then((data) => {
-        setMovies(data.results);
+        setMovies(data.results.slice(0, 3));
       })
       .catch((error) => console.log(error));
   }, []);
-
-  const posterPaths = movies.map((movie) => movie.backdrop_path);
 
   const sliderSettings = {
     dots: true,
@@ -35,41 +33,36 @@ const Hero = () => {
   return (
     <section className="hero">
       <Slider {...sliderSettings}>
-        <div className="hero-image-container">
-          <img
-            src={`https://image.tmdb.org/t/p/w1280/${posterPaths[0]}`}
-            alt="Movie Poster 1"
-            className="hero-image"
-          />
-        </div>
-        <div className="hero-image-container">
-          <img
-            src={`https://image.tmdb.org/t/p/w1280/${posterPaths[1]}`}
-            alt="Movie Poster 2"
-            className="hero-image"
-          />
-        </div>
-        <div className="hero-image-container">
-          <img
-            src={`https://image.tmdb.org/t/p/w1280/${posterPaths[2]}`}
-            alt="Movie Poster 3"
-            className="hero-image"
-          />
-        </div>
+        {movies.map((movie) => (
+          <div key={movie.id} className="hero-image-container">
+            <div className="hero-info">
+              <h2 className="movie-title">{movie.title}</h2>
+              <p className="movie-description">{movie.overview}</p>
+              <p className="movie-rating">
+                <span className="label">Rating:</span>{" "}
+                {movie.vote_average.toFixed(1)}
+              </p>
+              <p className="movie-release-date">
+                <span className="label">Release Date:</span>{" "}
+                {movie.release_date}
+              </p>
+            </div>
+            <img
+              src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+              alt={`Movie Poster ${movie.id}`}
+              className="hero-image"
+            />
+          </div>
+        ))}
       </Slider>
       <div className="slider-buttons">
-        <button
-          className={`slider-button ${activeSlide === 0 ? "active" : ""}`}
-          onClick={() => setActiveSlide(0)}
-        ></button>
-        <button
-          className={`slider-button ${activeSlide === 1 ? "active" : ""}`}
-          onClick={() => setActiveSlide(1)}
-        ></button>
-        <button
-          className={`slider-button ${activeSlide === 2 ? "active" : ""}`}
-          onClick={() => setActiveSlide(2)}
-        ></button>
+        {movies.map((movie, index) => (
+          <button
+            key={movie.id}
+            className={`slider-button ${activeSlide === index ? "active" : ""}`}
+            onClick={() => setActiveSlide(index)}
+          ></button>
+        ))}
       </div>
     </section>
   );

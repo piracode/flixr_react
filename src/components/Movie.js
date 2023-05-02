@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Movie = ({ id, poster_path, title }) => {
-  const [isStarred, setIsStarred] = useState("");
+  const [isStarred, setIsStarred] = useState(false);
 
   const toggleStar = () => {
     setIsStarred(!isStarred);
