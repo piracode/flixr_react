@@ -58,26 +58,25 @@ button.active {
 	background-color: $buttonColor;
 }
 
-/////////////////// change breakpoint! ///////////////////
 @media (min-width: 45em) {
 	.category-buttons-section ul {
-		gap: 2rem;
+		gap: 1rem;
 
 		.button-container {
 			gap: 1rem;
-			font-size: 1rem;
+			font-size: 0.9rem;
 		}
 
 		button {
 			&.category-buttons {
-				width: 180px;
-				height: 45px;
+				width: 155px;
+				height: 40px;
 				border-radius: 50px;
 				color: $fontWhite;
-				background-size: 25px;
-				background-position: 25px;
+				background-size: 18px;
+				background-position: 15px;
 				text-align: center;
-				padding-left: 30px;
+				padding-left: 25px;
 				font-size: 1.1rem;
 				&:active {
 					background-color: $buttonColor;

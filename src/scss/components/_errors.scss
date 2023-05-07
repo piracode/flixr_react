@@ -1,0 +1,22 @@
+@use '../base/settings' as *;
+
+.error-message {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3rem auto;
+	h2 {
+		font-size: 2.5rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		color: $buttonColor;
+	}
+	img {
+		width: 100px;
+		margin: 1.5rem;
+	}
+
+	p {
+		color: $fontWhite;
+	}
+}

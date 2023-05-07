@@ -1,16 +1,18 @@
 // Resets
-@use "./base/reset";
+@use './base/reset';
 
 // Components
-@use "./components/navbar";
-@use "./components/movies";
-@use "./components/movieDetail";
-@use "./components/buttons";
+@use './components/navbar';
+@use './components/movies';
+@use './components/movieDetail';
+@use './components/buttons';
 
-@use "./components/hero";
-@use "./components/footer";
-@use "./components/search";
-@use "./components//favourites";
+@use './components/hero';
+@use './components/footer';
+@use './components/search';
+@use './components/favourites';
+@use './components/about';
+@use './components/errors';
 
 //
 
