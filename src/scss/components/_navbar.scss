@@ -1,129 +1,129 @@
 // _navbar.scss
 
-@use "../base/settings" as *;
+@use '../base/settings' as *;
 
 .nav {
-  position: relative; // add this to create a positioned ancestor for the
-  width: 100%;
-  height: 7em;
-  background-color: $navBackground;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
+	position: relative; // add this to create a positioned ancestor for the
+	width: 100%;
+	height: 7em;
+	background-color: $backgroundColor;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
 
-  .header &-desktop {
-    display: none;
-  }
+	.header &-desktop {
+		display: none;
+	}
 
-  &-logo {
-    font-size: 4rem;
-    font-weight: 800;
-  }
+	&-logo {
+		font-size: 4rem;
+		font-weight: 800;
+	}
 
-  &-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    gap: 2rem;
-    padding: 10rem 0 3rem 0;
-  }
+	&-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: 2rem;
+		gap: 2rem;
+		padding: 10rem 0 3rem 0;
+	}
 
-  .burger-menu {
-    height: 2.9rem;
-    display: flex;
-    flex-direction: column;
-    // align-items: flex-start;
-    justify-content: space-between;
-    cursor: pointer;
+	.burger-menu {
+		height: 2.9rem;
+		display: flex;
+		flex-direction: column;
+		// align-items: flex-start;
+		justify-content: space-between;
+		cursor: pointer;
 
-    .burger-bar {
-      width: 3em;
-      height: 0.5em;
-      background-color: $fontWhite;
-      border-radius: 0.5em;
+		.burger-bar {
+			width: 3em;
+			height: 0.5em;
+			background-color: $fontWhite;
+			border-radius: 0.5em;
 
-      &.clicked:nth-child(1) {
-        transform: rotate(45deg) translate(0.75em, 1.25em);
-        transition: ease-out 0.2s;
-      }
+			&.clicked:nth-child(1) {
+				transform: rotate(45deg) translate(0.75em, 1.25em);
+				transition: ease-out 0.2s;
+			}
 
-      &.clicked:nth-child(2) {
-        transform: scale(0.1);
-        transition: ease-out 0.2s;
-      }
+			&.clicked:nth-child(2) {
+				transform: scale(0.1);
+				transition: ease-out 0.2s;
+			}
 
-      &.clicked:nth-child(3) {
-        transform: rotate(135deg) translate(-0.5em, 1em);
-        transition: ease-out 0.2s;
-      }
+			&.clicked:nth-child(3) {
+				transform: rotate(135deg) translate(-0.5em, 1em);
+				transition: ease-out 0.2s;
+			}
 
-      &.unclicked {
-        transform: rotate(0) translate(0);
-        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
-      }
-    }
-  }
+			&.unclicked {
+				transform: rotate(0) translate(0);
+				transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+			}
+		}
+	}
 }
 .menu {
-  width: 100%;
-  height: 100vh;
-  background-color: $navBackground;
-  position: absolute;
-  top: 0;
-  z-index: 1;
+	width: 100%;
+	height: 100vh;
+	background-color: $navBackground;
+	position: absolute;
+	top: 0;
+	z-index: 1;
 
-  &.hidden {
-    display: none;
-  }
+	&.hidden {
+		display: none;
+	}
 
-  &.visible {
-    display: inherit;
-  }
+	&.visible {
+		display: inherit;
+	}
 }
 
 .nav h1,
 .burger-menu {
-  position: relative; // create a stacking context for the elements
-  z-index: 2; // higher z-index value than the menu
+	position: relative; // create a stacking context for the elements
+	z-index: 2; // higher z-index value than the menu
 }
 
 .navButton button.nav-button {
-  background-color: #3d318f;
-  width: 90px;
-  height: 90px;
+	background-color: #3d318f;
+	width: 90px;
+	height: 90px;
 }
 
 .nav-buttons-section > ul.buttons-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0.5rem;
-  gap: 2rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 0.5rem;
+	gap: 2rem;
 }
 
 @media (min-width: 45em) {
-  .nav {
-    //can you change aria-expanded to false in css
-    .burger-menu {
-      display: none;
-    }
+	.nav {
+		//can you change aria-expanded to false in css
+		.burger-menu {
+			display: none;
+		}
 
-    .header &-desktop {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+		.header &-desktop {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+		}
 
-    .header &-desktop-container {
-      display: flex;
-      gap: 1rem;
-      font-size: 1.3rem;
-    }
-  }
+		.header &-desktop-container {
+			display: flex;
+			gap: 1rem;
+			font-size: 1.3rem;
+		}
+	}
 
-  .header .navButton {
-    display: none;
-  }
+	.header .navButton {
+		display: none;
+	}
 }
