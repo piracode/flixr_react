@@ -9,25 +9,27 @@ $buttonColor: #8e8eed;
 $fontWhite: #e5e4f2;
 
 // Fonts
-$font: "Work Sans", sans-serif;
+$font: 'Work Sans', sans-serif;
 
 // Layout
 // $section-padding: em(16) em(20);
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 // Type
 
 body {
-  font-family: $font;
-  color: $fontWhite;
-  background-color: $backgroundColor;
+	font-family: $font;
+	color: $fontWhite;
+	background-color: $backgroundColor;
+	display: flex;
+	flex-direction: column;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: $font;
+	font-family: $font;
 }
 
 h1,
@@ -35,18 +37,18 @@ h2,
 h3,
 h4,
 p {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 p {
-  line-height: 1.4;
+	line-height: 1.4;
 }
 
 a {
-  color: $fontWhite;
-  text-decoration: none;
+	color: $fontWhite;
+	text-decoration: none;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
