@@ -1,4 +1,4 @@
-@use "../base/settings" as *;
+@use '../base/settings' as *;
 
 .search {
   display: flex;
@@ -6,7 +6,7 @@
 
   // when typing we see the the button submit is a different part. Fix that. overflow hidden isnt working
   &__input {
-    background-color: $backgroundColor;
+    background-color: $backgroundColor !important;
     background-size: 30px;
     padding: 0.8rem;
     border: 1.5px solid $fontWhite;
@@ -16,6 +16,11 @@
     // overflow: hidden;
   }
 
+  // https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied
+  &__input:-webkit-autofill,
+  &__input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
   &__container {
     display: flex;
     align-items: center;
@@ -42,7 +47,7 @@
     margin-right: 24px;
   }
 
-  &__input[type="text"] {
+  &__input[type='text'] {
     color: $fontWhite;
     font-size: 1.2rem;
   }
