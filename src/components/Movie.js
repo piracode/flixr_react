@@ -57,7 +57,6 @@ const Movie = ({ id, className, isFavouritePage, isStarred, onToggleStar }) => {
           storedFavorites &&
           storedFavorites.find((movie) => movie.id === id)
         ) {
-          alert("This movie is already in your favorites!");
           setIsStarredState(false);
           return;
         }
