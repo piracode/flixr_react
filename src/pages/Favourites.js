@@ -11,10 +11,11 @@ const Favourites = () => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   debugger;
-  //   localStorage.setItem("favorites", JSON.stringify(favorites));
-  // }, [favorites]);
+  const handleRemoveFavorite = (id) => {
+    const updatedFavorites = favorites.filter((movie) => movie.id !== id);
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   return (
     <div className="favourites-container">
@@ -26,6 +27,9 @@ const Favourites = () => {
           id={movie.id}
           poster_path={movie.poster_path}
           title={movie.title}
+          isStarred={true} // Pass the isStarred prop as true
+          onToggleStar={() => handleRemoveFavorite(movie.id)} // Pass a function to remove the movie from favourites
+          isFavouritePage={true}
         />
       ))}
     </div>
