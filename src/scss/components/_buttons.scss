@@ -58,6 +58,15 @@ button.active {
 	background-color: $buttonColor;
 }
 
+button.star-button {
+	width: 30px;
+	background-color: transparent;
+	border: none;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
 @media (min-width: 45em) {
 	.category-buttons-section ul {
 		gap: 1rem;
