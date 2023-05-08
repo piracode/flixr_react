@@ -1,5 +1,5 @@
 import './scss/styles.scss'
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -28,19 +28,6 @@ function App() {
           <Navbar
             chosenCategory={chosenCategory}
             onCategoryButtonClick={handleCategoryButtonClick}
-            homeLink={
-              <NavLink className='nav-logo' to='/'>
-                flixr
-              </NavLink>
-            }
-            otherLinks={[
-              <NavLink className='nav-links' to='/about'>
-                about
-              </NavLink>,
-              <NavLink className='nav-links' to='/favourites'>
-                favourites
-              </NavLink>,
-            ]}
           />
         </header>
         <main>
