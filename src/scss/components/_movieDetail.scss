@@ -1,128 +1,118 @@
 @use '../base/settings' as *;
 
 section.movie-details-page {
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
+  //   display: flex;
+  //   flex: 1;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   position: relative;
 
-	.movie-details-backdrop-container {
-		position: relative;
-		display: none;
-	}
+  .movie-details-backdrop-container {
+    // position: relative;
+    display: none;
+  }
 
-	.movie-details-backdrop-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.447);
-		z-index: 1;
-	}
+  .movie-details-backdrop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.447);
+    // z-index: 1;
+  }
+}
+
+.overview {
+  background-color: rgba(142, 142, 237, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .movie-details-box {
-	display: flex;
-	padding: 1rem;
-	flex-direction: column;
-	align-items: center;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
 
-	img {
-		width: 150px;
-		border-radius: 15px;
-		margin: 0.5rem;
-	}
+  img {
+    width: 9.5rem;
+    border-radius: 15px;
+    margin: 0.5rem;
+  }
 
-	.movie-details {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5rem;
+  .movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 
-		h2 {
-			text-align: center;
-		}
+    h2 {
+      text-align: center;
+      padding: 1rem 0 0 0;
+    }
 
-		.movie-details-year-rating {
-			display: flex;
-			gap: 2rem;
-		}
+    .movie-details-year-rating {
+      display: flex;
+      gap: 2rem;
+      padding-bottom: 0.8rem;
+    }
 
-		ul {
-			margin: 1rem;
-			display: flex;
-			gap: 0.5rem;
-			flex-wrap: wrap;
-			li {
-				border: 1px solid $fontWhite;
-				padding: 0.5rem 1rem;
-				border-radius: 40px;
-			}
-		}
-	}
+    ul {
+      margin: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      li {
+        border: 1px solid $fontWhite;
+        padding: 0.5rem 1rem;
+        border-radius: 40px;
+      }
+    }
+  }
 }
 
 @media (min-width: 43.75em) {
-	section.movie-details-page {
-		position: relative;
+  .movie-details-box {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+  }
 
-		img.movie-details-backdrop {
-			width: 100%;
-			height: 400px;
-			object-fit: cover;
-		}
-		.movie-details-backdrop-container {
-			position: relative;
-			display: inline-block;
-			width: 100%;
-			height: 400px;
-		}
+  section.movie-details-page {
+    .movie-details-backdrop-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      //   height: 400px;
+    }
+    .movie-details-year-rating {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0.7rem;
+    }
+  }
+  // .image-wrapper {
+  //   position: absolute;
+  //   top: -60px;
+  //   left: 20px;
+  //   box-shadow: 2px 2px 15px 0 black;
+  // }
+  .details-image-wrapper {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+    box-shadow: 2px 2px 15px 0 black;
+  }
 
-		.movie-details-backdrop-overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.447);
-			z-index: 1;
-		}
-	}
-	.movie-details-box {
-		position: relative;
-		width: 100%;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: center;
-		gap: 1rem;
-		width: 80%;
-		position: absolute;
-		z-index: 3;
-		top: 300px;
+  .movie-details {
+    grid-column: 2/3;
+    margin-right: 2rem;
+  }
+}
 
-		h2 {
-			font-size: 2rem;
-		}
-
-		.movie-details-title {
-			margin-top: 6.5rem;
-		}
-
-		.movie-details-year-rating {
-			font-size: 1.25rem;
-			font-weight: 500;
-			margin: 0.7rem;
-		}
-
-		img.image-wrapper {
-			width: 240px;
-		}
-
-		.movie-details {
-			align-items: center;
-			gap: 0.5rem;
-		}
-	}
+@media (min-width: 56em) {
+  .movie-details {
+    margin-right: 6rem;
+  }
 }
