@@ -1,30 +1,30 @@
-import './scss/styles.scss'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import "./scss/styles.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 //pages
-import About from './pages/About'
-import Favourites from './pages/Favourites'
-import Home from './pages/Home'
-import MovieDetails from './pages/MovieDetails'
-import SearchResults from './pages/SearchResults'
-import { useState } from 'react'
+import About from "./pages/About";
+import Favourites from "./pages/Favourites";
+import Home from "./pages/Home";
+import MovieDetails from "./pages/MovieDetails";
+import SearchResults from "./pages/SearchResults";
+import { useState } from "react";
 
 function App() {
-  const [chosenCategory, setChosenCategory] = useState('popular')
+  const [chosenCategory, setChosenCategory] = useState("popular");
 
   function handleCategoryButtonClick(e) {
-    let clickedCategory = e.target.id
-    setChosenCategory(clickedCategory)
+    let clickedCategory = e.target.id;
+    setChosenCategory(clickedCategory);
   }
 
   return (
     <>
       <BrowserRouter>
-        <header className='header'>
+        <header className="header">
           <Navbar
             chosenCategory={chosenCategory}
             onCategoryButtonClick={handleCategoryButtonClick}
@@ -33,7 +33,7 @@ function App() {
         <main>
           <Routes>
             <Route
-              path='/'
+              path="/"
               exact
               element={
                 <Home
@@ -42,16 +42,16 @@ function App() {
                 />
               }
             />
-            <Route path='/about' element={<About />} />
-            <Route path='/favourites' element={<Favourites />} />
-            <Route path='/movieDetails' element={<MovieDetails />} />
-            <Route path='/searchResults' element={<SearchResults />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/favourites" element={<Favourites />} />
+            <Route path="/movieDetails" element={<MovieDetails />} />
+            <Route path="/searchResults" element={<SearchResults />} />
           </Routes>
         </main>
       </BrowserRouter>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
