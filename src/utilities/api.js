@@ -34,7 +34,7 @@ export const searchMovies = async searchQuery => {
 		const data = await response.json();
 		return data.results;
 	} catch (error) {
-		// console.error(error)
+		console.error(error);
 		throw new Error('Failed to fetch movie data');
 	}
 };

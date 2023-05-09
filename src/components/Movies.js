@@ -11,9 +11,8 @@ const Movies = ({ chosenCategory }) => {
 		get(`${chosenCategory}?api_key=${API_KEY}&language=en-US&page=1`)
 			.then(data => {
 				setMovies(data.results);
-				console.log(data.results);
 			})
-			.catch(error => console.log(error)); /////// what do i do with this error? should i display it? ////////
+			.catch(error => console.log(error));
 	}, [chosenCategory]);
 
 	if (movies) {
