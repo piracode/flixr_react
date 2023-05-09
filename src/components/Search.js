@@ -9,7 +9,7 @@ const Search = ({ onSearchSubmit }) => {
     e.preventDefault()
     const searchValue = e.target.elements['search-input'].value
     setSearchInputValue(searchValue)
-    // onSearchSubmit(searchValue) //????
+    onSearchSubmit(searchValue)
     navigate(`/searchResults?query=${searchValue}`)
 
     e.target.reset()
