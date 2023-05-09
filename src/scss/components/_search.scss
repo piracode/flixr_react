@@ -1,71 +1,72 @@
 @use '../base/settings' as *;
 
 .search {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
 
-	// when typing we see the the button submit is a different part. Fix that. overflow hidden isnt working
-	&__input {
-		background-color: $backgroundColor !important;
-		background-size: 30px;
-		padding: 0.8rem;
-		border: 1.5px solid $fontWhite;
-		border-radius: 2rem;
-		width: 18rem;
-		// z-index: 1;
-		// overflow: hidden;
-	}
+  // when typing we see the the button submit is a different part. Fix that. overflow hidden isnt working
+  &__input {
+    background-color: $backgroundColor !important;
+    background-size: 30px;
+    padding: 0.8rem;
+    border: 1.5px solid $fontWhite;
+    border-radius: 2rem;
+    width: 18rem;
+    // z-index: 1;
+    // overflow: hidden;
+  }
 
-	// https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied
-	&__input:-webkit-autofill,
-	&__input:-webkit-autofill:focus {
-		transition: background-color 600000s 0s, color 600000s 0s;
-	}
-	&__container {
-		display: flex;
-		align-items: center;
-		position: relative;
-	}
+  // https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied
+  &__input:-webkit-autofill,
+  &__input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
 
-	&__svg {
-		position: absolute;
-		background-image: url(./../../assets/search.svg);
-		background-repeat: no-repeat;
-		background-color: $backgroundColor;
-		border: none;
-		border-top: 1.5px solid $fontWhite;
-		border-bottom: 1.5px solid $fontWhite;
-		background-size: 35px;
-		background-position: right;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 50px;
-		height: 50px;
-		cursor: pointer;
-		// overflow: hidden;
-		margin-right: 24px;
-	}
+  &__svg {
+    position: absolute;
+    background-image: url(./../../assets/search.svg);
+    background-repeat: no-repeat;
+    background-color: $backgroundColor;
+    border: none;
+    border-top: 1.5px solid $fontWhite;
+    border-bottom: 1.5px solid $fontWhite;
+    background-size: 35px;
+    background-position: right;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    // overflow: hidden;
+    margin-right: 24px;
+  }
 
-	&__input[type='text'] {
-		font-family: $font;
-		color: $fontWhite;
-		font-size: 1.2rem;
+  &__input[type='text'] {
+    font-family: $font;
+    color: $fontWhite;
+    font-size: 1.2rem;
 
-		&::placeholder {
-			color: rgb(187, 187, 187);
-			font-size: 1.2rem;
-			font-style: italic;
-		}
-	}
+    &::placeholder {
+      color: rgb(187, 187, 187);
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
 
-	button {
-		background-color: transparent;
-		border: none;
-	}
+  button {
+    background-color: transparent;
+    border: none;
+  }
 
-	&__query-title {
-		padding: 2rem 0 2rem 0;
-		text-align: center;
-	}
+  &__query-title {
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+  }
 }
