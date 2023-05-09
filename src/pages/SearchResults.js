@@ -31,6 +31,8 @@ const SearchResults = () => {
 								key={movie.id}
 								poster_path={movie.poster_path}
 								title={movie.title}
+								id={movie.id}
+								className={'individual-movie-container'}
 							/>
 						);
 					})}
