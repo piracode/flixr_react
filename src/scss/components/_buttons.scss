@@ -62,9 +62,16 @@ button.star-button {
 	width: 30px;
 	background-color: transparent;
 	border: none;
+}
+
+.individual-movie-container-star button.star-button {
 	position: absolute;
 	top: 15px;
 	right: 15px;
+}
+
+.movie-details-box-star button.star-button {
+	width: 50px;
 }
 
 @media (min-width: 45em) {
