@@ -18,18 +18,16 @@ $font: 'Work Sans', sans-serif;
 // Type
 
 body {
-	font-family: $font;
-	color: $fontWhite;
-	background-color: $backgroundColor;
-	display: flex;
-	flex-direction: column;
+  font-family: $font;
+  color: $fontWhite;
+  background-color: $backgroundColor;
 }
 
 h1,
 h2,
 h3,
 h4 {
-	font-family: $font;
+  font-family: $font;
 }
 
 h1,
@@ -37,22 +35,22 @@ h2,
 h3,
 h4,
 p {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 main {
-	flex: 1;
+  flex: 1;
 }
 
 p {
-	line-height: 1.4;
+  line-height: 1.4;
 }
 
 a {
-	color: $fontWhite;
-	text-decoration: none;
+  color: $fontWhite;
+  text-decoration: none;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
