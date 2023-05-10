@@ -21,7 +21,6 @@ const Hero = () => {
 			})
 			.catch(error => console.log(error));
 	}, []);
-	// })
 
 	const posterPaths = movies.map(movie => movie.backdrop_path);
 

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-/////////////////// BIA TESTING FETCH ///////////////////
-
 export default function useFetch(baseUrl) {
 	const [loading, setLoading] = useState(true);
 
